@@ -17,7 +17,7 @@ namespace LinkedList
             // |    3     |    null  + 
             // +----------|----------+
             Node first = new Node { Value = 3 };
-            PrintNode(first);
+            //PrintNode(first);
 
             // +----------+----------+      +----------+----------+
             // |    3     |    null  +      |    6     |    null  + 
@@ -28,7 +28,7 @@ namespace LinkedList
             // |    3     |    *-----+----->|    6     |    null  + 
             // +----------|----------+      +----------|----------+
             first.Next = second;
-            PrintNode(second);
+            //PrintNode(second);
 
 
             // +----------+----------+      +----------+----------+     +----------+----------+
@@ -40,14 +40,23 @@ namespace LinkedList
             // |    3     |    *-----+----->|    6     |     *----+---->|    9     |    null  +  
             // +----------|----------+      +----------|----------+     +----------|----------+
             second.Next = third;
-            PrintNode(third);
+            //PrintNode(third);
 
-
+            PrintAllNodes(first);
 
             Console.ReadKey();
         }
 
+        private static void PrintAllNodes(Node inNode) {
 
+            while (inNode != null)
+            {
+
+                PrintNode(inNode);
+                inNode = inNode.Next;
+            }
+
+        }
 
 
         static void PrintNode(Node inNode)
