@@ -51,7 +51,6 @@ namespace LinkedList
 
             while (inNode != null)
             {
-
                 PrintNode(inNode);
                 inNode = inNode.Next;
             }
@@ -62,20 +61,49 @@ namespace LinkedList
         static void PrintNode(Node inNode)
         {
 
-            Console.WriteLine("Node value is: " + inNode.Value);
-            
+            Console.WriteLine("Node value is: " + inNode.Value);            
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private class NodeList
+        {
+
+            public Node[] ListOfNodes { get; set; }
+
+
+
+
+
+        }
+
+        private class Node
+        {
+            public int Value { get; set; }
+            public Node Next { get; set; }
+
+
+            public Node() { }
+
+            public Node(int inValue)
+            {
+                Value = inValue;
+            }
+
+
+            public Node(int inValue, Node inNode) : this(inValue)
+            {
+                Next = inNode;
+            }
+
+        }
 
 
     }
 
 
-    public class Node
-    {
-        public int Value { get; set; }
-        public Node Next { get; set; }
-    }
+    
 
 }
